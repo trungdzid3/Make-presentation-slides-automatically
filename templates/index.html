@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Slide Generator</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        form { display: flex; flex-direction: column; max-width: 600px; }
+        label { margin-top: 10px; }
+        input, textarea { padding: 8px; margin-top: 5px; }
+        textarea { height: 150px; }
+        button { margin-top: 20px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>AI Slide Generator</h1>
+    <form action="/generate" method="post">
+        <label for="topic">Chủ đề:</label>
+        <input type="text" id="topic" name="topic" required>
+
+        <label for="data">Dữ liệu đầu vào:</label>
+        <textarea id="data" name="data" required></textarea>
+
+        <button type="submit">Tạo Slides</button>
+    </form>
+</body>
+</html>
