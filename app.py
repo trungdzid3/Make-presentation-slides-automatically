@@ -122,7 +122,17 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     topic = request.form['topic']
-    data = request.form['data']
+    data = request.form.get('data', '') # Sử dụng .get để tránh KeyError
+    file = request.files.get('file')
+
+    if file and file.filename != '':
+        # Ưu tiên đọc dữ liệu từ file nếu được cung cấp
+        if file.filename.endswith('.txt'):
+            data = file.read().decode('utf-8')
+        else:
+            return "Lỗi: Chỉ hỗ trợ file .txt", 400
+    elif not data:
+        return "Lỗi: Vui lòng cung cấp dữ liệu qua văn bản hoặc tải lên một file.", 400
 
     # Gọi hàm AI để lấy nội dung (sử dụng hàm giả lập)
     slides_content = generate_slides_from_ai_mock(topic, data)

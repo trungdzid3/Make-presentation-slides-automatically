@@ -1,0 +1,9 @@
+# Log files
+app.log
+
+# Test files
+test_upload.txt
+
+# Python cache
+__pycache__/
+*.pyc

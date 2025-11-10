@@ -15,12 +15,15 @@
 </head>
 <body>
     <h1>AI Slide Generator</h1>
-    <form action="/generate" method="post">
+    <form action="/generate" method="post" enctype="multipart/form-data">
         <label for="topic">Chủ đề:</label>
         <input type="text" id="topic" name="topic" required>
 
-        <label for="data">Dữ liệu đầu vào:</label>
-        <textarea id="data" name="data" required></textarea>
+        <label for="data">Dữ liệu đầu vào (dán văn bản vào đây):</label>
+        <textarea id="data" name="data"></textarea>
+
+        <label for="file">Hoặc tải lên một file văn bản (.txt):</label>
+        <input type="file" id="file" name="file" accept=".txt">
 
         <button type="submit">Tạo Slides</button>
     </form>

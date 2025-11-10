@@ -1,0 +1,2 @@
+Đây là nội dung từ một file văn bản được tải lên để kiểm tra.
+Nó chứa một vài dòng để đảm bảo việc đọc file hoạt động chính xác.
